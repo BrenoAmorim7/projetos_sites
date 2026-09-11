@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Posto e Pousada Pico do Jabre</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --asphalt: #11151b;
+      --asphalt-2: #1a2029;
+      --asphalt-3: #212832;
+
+      --yellow: #ffc400;
+      --yellow-dark: #d99d00;
+
+      --blue: #164b8f;
+
+      --cream: #f4efe4;
+      --white: #fbf9f5;
+      --concrete: #9aa1ab;
+
+      --line: rgba(255,255,255,0.09);
+
+      --maxw: 1180px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--asphalt);
+      color:var(--white);
+      font-family:'Work Sans',sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 28px;
+    }
+
+    h1,
+    h2,
+    h3{
+      font-family:'Anton',sans-serif;
+      font-weight:400;
+      text-transform:uppercase;
+      letter-spacing:.01em;
+      line-height:.98;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+
+      background:rgba(17,21,27,.78);
+      backdrop-filter:blur(12px);
+
+      border-bottom:1px solid var(--line);
+    }
+
+    nav{
+      height:76px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+
+      object-fit:cover;
+
+      border-radius:10px;
+
+      box-shadow:
+        0 0 0 3px rgba(255,196,0,.14);
+    }
+
+    .brand-name{
+      font-family:'Anton',sans-serif;
+      font-size:17px;
+      letter-spacing:.03em;
+    }
+
+    .brand-name small{
+      display:block;
+
+      font-family:'Work Sans',sans-serif;
+
+      font-size:10px;
+      letter-spacing:.18em;
+
+      color:var(--concrete);
+
+      font-weight:500;
+
+      text-transform:uppercase;
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:34px;
+    }
+
+    .navlinks a{
+      font-size:13px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:600;
+
+      color:var(--cream);
+
+      opacity:.75;
+
+      transition:.2s;
+    }
+
+    .navlinks a:hover{
+      opacity:1;
+      color:var(--yellow);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:12px 22px;
+
+      border-radius:3px;
+
+      font-size:13px;
+      font-weight:700;
+
+      letter-spacing:.04em;
+
+      text-transform:uppercase;
+
+      border:1px solid transparent;
+
+      transition:.2s;
+    }
+
+    .btn-yellow{
+      background:var(--yellow);
+      color:var(--asphalt);
+    }
+
+    .btn-yellow:hover{
+      transform:translateY(-2px);
+
+      box-shadow:
+        0 10px 24px -8px rgba(255,196,0,.55);
+    }
+
+    .btn-ghost{
+      border-color:rgba(255,255,255,.28);
+      color:var(--white);
+    }
+
+    .btn-ghost:hover{
+      border-color:var(--yellow);
+      color:var(--yellow);
+
+      transform:translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      position:relative;
+
+      min-height:100vh;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+
+      padding-top:120px;
+      padding-bottom:80px;
+
+      background:
+        radial-gradient(
+          circle at 82% 18%,
+          rgba(255,196,0,.18),
+          transparent 46%
+        ),
+
+        radial-gradient(
+          circle at 10% 85%,
+          rgba(22,75,143,.16),
+          transparent 50%
+        ),
+
+        linear-gradient(
+          180deg,
+          #12161c 0%,
+          #0f1217 100%
+        );
+
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+
+      position:absolute;
+
+      width:500px;
+      height:500px;
+
+      right:-180px;
+      top:-180px;
+
+      border-radius:50%;
+
+      border:1px solid rgba(255,196,0,.10);
+
+      box-shadow:
+        0 0 0 70px rgba(255,196,0,.025),
+        0 0 0 140px rgba(255,196,0,.018);
+    }
+
+    .drop{
+      position:absolute;
+
+      border-radius:50%;
+
+      pointer-events:none;
+
+      filter:blur(2px);
+
+      opacity:.55;
+    }
+
+    .drop-1{
+      width:180px;
+      height:180px;
+
+      top:12%;
+      right:8%;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          rgba(255,196,0,.35),
+          transparent 70%
+        );
+
+      animation:drift1 9s ease-in-out infinite;
+    }
+
+    .drop-2{
+      width:110px;
+      height:110px;
+
+      top:60%;
+      right:22%;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          rgba(22,75,143,.32),
+          transparent 70%
+        );
+
+      animation:drift2 11s ease-in-out infinite;
+    }
+
+    .drop-3{
+      width:70px;
+      height:70px;
+
+      top:30%;
+      right:32%;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          rgba(255,196,0,.28),
+          transparent 70%
+        );
+
+      animation:drift3 7.5s ease-in-out infinite;
+    }
+
+    @keyframes drift1{
+      0%,100%{
+        transform:translate(0,0) scale(1);
+      }
+
+      50%{
+        transform:translate(-24px,26px) scale(1.08);
+      }
+    }
+
+    @keyframes drift2{
+      0%,100%{
+        transform:translate(0,0) scale(1);
+      }
+
+      50%{
+        transform:translate(20px,-18px) scale(.94);
+      }
+    }
+
+    @keyframes drift3{
+      0%,100%{
+        transform:translate(0,0);
+      }
+
+      50%{
+        transform:translate(-14px,-22px);
+      }
+    }
+
+    .hero-grid{
+      display:grid;
+
+      grid-template-columns:1.25fr .9fr;
+
+      gap:60px;
+
+      align-items:center;
+
+      position:relative;
+
+      z-index:2;
+    }
+
+    .eyebrow-route{
+      display:flex;
+      align-items:center;
+
+      gap:10px;
+
+      font-size:12px;
+
+      letter-spacing:.14em;
+
+      color:var(--yellow);
+
+      font-weight:700;
+
+      text-transform:uppercase;
+
+      margin-bottom:22px;
+
+      opacity:0;
+
+      transform:translateY(10px);
+
+      animation:riseIn .7s ease forwards;
+    }
+
+    .eyebrow-route .dot{
+      width:6px;
+      height:6px;
+
+      background:var(--yellow);
+
+      border-radius:50%;
+
+      box-shadow:
+        0 0 0 4px rgba(255,196,0,.18);
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6.4vw,84px);
+
+      color:var(--white);
+    }
+
+    .hero h1 .line{
+      display:block;
+
+      overflow:hidden;
+    }
+
+    .hero h1 .line span{
+      display:block;
+
+      transform:translateY(110%);
+
+      animation:
+        slideUp .8s cubic-bezier(.2,.9,.25,1) forwards;
+    }
+
+    .hero h1 .line:nth-child(1) span{
+      animation-delay:.15s;
+    }
+
+    .hero h1 .line:nth-child(2) span{
+      animation-delay:.32s;
+
+      color:var(--yellow);
+    }
+
+    .hero h1 .line:nth-child(3) span{
+      animation-delay:.49s;
+    }
+
+    .hero p.lead{
+      max-width:500px;
+
+      margin-top:26px;
+
+      font-size:17px;
+
+      color:var(--concrete);
+
+      opacity:0;
+
+      transform:translateY(10px);
+
+      animation:
+        riseIn .7s ease forwards;
+
+      animation-delay:.68s;
+    }
+
+    .hero-actions{
+      display:flex;
+
+      gap:14px;
+
+      margin-top:34px;
+
+      flex-wrap:wrap;
+
+      opacity:0;
+
+      transform:translateY(10px);
+
+      animation:
+        riseIn .7s ease forwards;
+
+      animation-delay:.82s;
+    }
+
+    @keyframes slideUp{
+      to{
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes riseIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .info-card{
+      background:
+        linear-gradient(
+          160deg,
+          var(--asphalt-2),
+          var(--asphalt-3)
+        );
+
+      border:1px solid var(--line);
+
+      border-radius:6px;
+
+      padding:30px;
+
+      position:relative;
+
+      opacity:0;
+
+      transform:
+        translateY(16px)
+        scale(.98);
+
+      animation:
+        riseIn .8s ease forwards;
+
+      animation-delay:1s;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .info-card::before{
+      content:"PICO DO JABRE";
+
+      position:absolute;
+
+      top:-13px;
+      right:22px;
+
+      background:var(--blue);
+
+      color:white;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:12px;
+
+      padding:6px 12px;
+
+      border-radius:3px;
+
+      letter-spacing:.06em;
+    }
+
+    .logo-large{
+      width:190px;
+      height:190px;
+
+      object-fit:cover;
+
+      border-radius:22px;
+
+      margin:0 auto 25px;
+
+      box-shadow:
+        0 0 0 4px rgba(255,196,0,.10),
+        0 18px 45px rgba(0,0,0,.35);
+    }
+
+    .info-card h2{
+      text-align:center;
+
+      font-size:28px;
+    }
+
+    .card-sub{
+      text-align:center;
+
+      color:var(--concrete);
+
+      font-size:14px;
+
+      margin-top:8px;
+    }
+
+    .divider{
+      height:1px;
+
+      background:var(--line);
+
+      margin:22px 0;
+    }
+
+    .card-info{
+      color:var(--concrete);
+
+      font-size:14px;
+
+      text-align:center;
+
+      line-height:1.7;
+    }
+
+    .tags{
+      display:flex;
+
+      justify-content:center;
+
+      gap:8px;
+
+      flex-wrap:wrap;
+
+      margin-top:18px;
+    }
+
+    .tag{
+      padding:7px 11px;
+
+      border:1px solid var(--line);
+
+      border-radius:3px;
+
+      font-size:10px;
+
+      letter-spacing:.06em;
+
+      text-transform:uppercase;
+    }
+
+    /* =========================
+       ROAD
+    ========================= */
+
+    .road{
+      position:relative;
+
+      height:46px;
+
+      margin-top:64px;
+
+      display:flex;
+
+      align-items:center;
+    }
+
+    .road::before{
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      right:0;
+
+      top:50%;
+
+      height:3px;
+
+      transform:translateY(-50%);
+
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          var(--yellow) 0 34px,
+          transparent 34px 64px
+        );
+
+      background-size:200px 3px;
+
+      animation:roadMove 3.4s linear infinite;
+
+      opacity:.85;
+    }
+
+    @keyframes roadMove{
+      to{
+        background-position:-200px 0;
+      }
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats{
+      border-top:1px solid var(--line);
+
+      border-bottom:1px solid var(--line);
+
+      background:var(--asphalt-2);
+    }
+
+    .stats .wrap{
+      display:grid;
+
+      grid-template-columns:repeat(2,1fr);
+
+      padding:30px 28px;
+    }
+
+    .stat{
+      text-align:center;
+
+      border-right:1px solid var(--line);
+
+      padding:6px 10px;
+    }
+
+    .stat:last-child{
+      border-right:none;
+    }
+
+    .stat-num{
+      font-family:'Anton',sans-serif;
+
+      font-size:34px;
+
+      color:var(--yellow);
+    }
+
+    .stat-label{
+      margin-top:4px;
+
+      font-size:12px;
+
+      letter-spacing:.06em;
+
+      text-transform:uppercase;
+
+      color:var(--concrete);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section{
+      padding:110px 0;
+    }
+
+    .sec-head{
+      max-width:620px;
+
+      margin-bottom:56px;
+    }
+
+    .sec-kicker{
+      font-size:12px;
+
+      letter-spacing:.16em;
+
+      text-transform:uppercase;
+
+      color:var(--yellow);
+
+      font-weight:700;
+    }
+
+    .sec-head h2{
+      font-size:clamp(30px,4vw,46px);
+
+      margin-top:10px;
+
+      color:var(--white);
+    }
+
+    .sec-head p{
+      margin-top:16px;
+
+      color:var(--concrete);
+
+      font-size:16px;
+
+      max-width:500px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .bento{
+      display:grid;
+
+      grid-template-columns:1.2fr 1fr;
+
+      gap:18px;
+    }
+
+    .panel{
+      border-radius:6px;
+
+      padding:32px;
+
+      position:relative;
+
+      overflow:hidden;
+
+      border:1px solid var(--line);
+
+      transition:transform .3s ease;
+    }
+
+    .panel:hover{
+      transform:translateY(-4px);
+    }
+
+    .panel::before{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      pointer-events:none;
+
+      background:
+        radial-gradient(
+          300px circle at 80% 20%,
+          rgba(255,196,0,.12),
+          transparent 70%
+        );
+    }
+
+    .panel-icon{
+      font-size:44px;
+
+      margin-bottom:24px;
+    }
+
+    .panel h3{
+      font-size:28px;
+    }
+
+    .panel p{
+      margin-top:12px;
+
+      font-size:15px;
+
+      color:rgba(255,255,255,.68);
+
+      max-width:430px;
+    }
+
+    .panel-abastecimento{
+      min-height:330px;
+
+      background:
+        linear-gradient(
+          155deg,
+          rgba(255,196,0,.10),
+          var(--asphalt-2)
+        );
+    }
+
+    .panel-hospedagem{
+      min-height:330px;
+
+      background:
+        linear-gradient(
+          155deg,
+          rgba(22,75,143,.20),
+          var(--asphalt-2)
+        );
+    }
+
+    .service-number{
+      position:absolute;
+
+      right:28px;
+
+      bottom:20px;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:90px;
+
+      color:rgba(255,255,255,.035);
+    }
+
+    /* =========================
+       LOCALIZAÇÃO
+    ========================= */
+
+    .location{
+      background:var(--asphalt-2);
+
+      border-top:1px solid var(--line);
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .location-grid{
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:40px;
+
+      align-items:stretch;
+    }
+
+    .map-frame{
+      min-height:380px;
+
+      border-radius:6px;
+
+      overflow:hidden;
+
+      border:1px solid var(--line);
+
+      position:relative;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,196,0,.18),
+          transparent 42%
+        ),
+
+        linear-gradient(
+          145deg,
+          #1d252f,
+          #11151b
+        );
+    }
+
+    .map-content{
+      text-align:center;
+
+      padding:30px;
+    }
+
+    .map-pin{
+      font-size:60px;
+
+      margin-bottom:12px;
+    }
+
+    .map-content h3{
+      font-size:32px;
+    }
+
+    .map-content p{
+      color:var(--concrete);
+
+      margin-top:10px;
+    }
+
+    .loc-card{
+      background:var(--asphalt);
+
+      border:1px solid var(--line);
+
+      border-radius:6px;
+
+      padding:34px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+    }
+
+    .loc-row{
+      display:flex;
+
+      gap:14px;
+
+      padding:18px 0;
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .loc-row:first-child{
+      padding-top:0;
+    }
+
+    .loc-row:last-child{
+      border-bottom:none;
+    }
+
+    .loc-icon{
+      color:var(--yellow);
+
+      font-size:22px;
+
+      flex-shrink:0;
+    }
+
+    .loc-label{
+      font-size:11px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.08em;
+
+      color:var(--concrete);
+    }
+
+    .loc-value{
+      font-size:15px;
+
+      margin-top:4px;
+
+      color:var(--white);
+    }
+
+    .loc-actions{
+      display:flex;
+
+      gap:12px;
+
+      margin-top:26px;
+
+      flex-wrap:wrap;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-band{
+      background:
+        linear-gradient(
+          120deg,
+          #17130a,
+          var(--asphalt) 60%
+        );
+
+      border-top:1px solid var(--line);
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .cta-band .road{
+      margin:0 0 40px 0;
+    }
+
+    .cta-inner{
+      text-align:center;
+
+      max-width:680px;
+
+      margin:0 auto;
+    }
+
+    .cta-inner h2{
+      font-size:clamp(30px,5vw,52px);
+    }
+
+    .cta-inner p{
+      color:var(--concrete);
+
+      margin-top:16px;
+
+      font-size:16px;
+    }
+
+    .cta-inner .hero-actions{
+      justify-content:center;
+
+      margin-top:30px;
+
+      opacity:1;
+
+      transform:none;
+
+      animation:none;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      border-top:1px solid var(--line);
+
+      padding:44px 0;
+
+      background:#0d1015;
+    }
+
+    .foot-grid{
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      flex-wrap:wrap;
+
+      gap:16px;
+    }
+
+    .foot-legal{
+      font-size:12.5px;
+
+      color:var(--concrete);
+    }
+
+    /* =========================
+       SCROLL BAR
+    ========================= */
+
+    #scrollbar{
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      height:3px;
+
+      width:0%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--yellow)
+        );
+
+      z-index:200;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media(max-width:900px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .location-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:720px){
+
+      .navlinks{
+        display:none;
+      }
+
+      .navcta{
+        display:none;
+      }
+
+      .stats .wrap{
+        grid-template-columns:repeat(2,1fr);
+        row-gap:22px;
+      }
+
+      .stat:nth-child(2){
+        border-right:none;
+      }
+
+      .bento{
+        grid-template-columns:1fr;
+      }
+
+      .location-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .wrap{
+        padding:0 20px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .brand-name{
+        font-size:14px;
+      }
+
+      .brand-logo{
+        width:42px;
+        height:42px;
+      }
+
+      .info-card{
+        padding:25px 20px;
+      }
+
+      .logo-large{
+        width:150px;
+        height:150px;
+      }
+
+      .stats .wrap{
+        grid-template-columns:1fr;
+      }
+
+      .stat{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+
+      .stat:last-child{
+        border-bottom:none;
+      }
+
+      .loc-actions .btn{
+        width:100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div id="scrollbar"></div>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+  <nav class="wrap">
+
+    <a class="brand" href="#inicio">
+
+      <img
+        class="brand-logo"
+        src="logo-pico-do-jabre.jpg"
+        alt="Logo do Posto e Pousada Pico do Jabre"
+      >
+
+      <div class="brand-name">
+
+        Pico do Jabre
+
+        <small>
+          Matureia · PB
+        </small>
+
+      </div>
+
+    </a>
+
+    <div class="navlinks">
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="#servicos">
+        Serviços
+      </a>
+
+      <a href="#localizacao">
+        Localização
+      </a>
+
+    </div>
+
+    <div class="navcta">
+
+      <a
+        class="btn btn-yellow"
+        href="#localizacao"
+      >
+        Como chegar
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+  <div class="drop drop-1"></div>
+  <div class="drop drop-2"></div>
+  <div class="drop drop-3"></div>
+
+  <div class="wrap hero-grid">
+
+    <div>
+
+      <div class="eyebrow-route">
+
+        <span class="dot"></span>
+
+        Posto & Pousada · Matureia/PB
+
+      </div>
+
+
+      <h1>
+
+        <span class="line">
+          <span>Abasteça,</span>
+        </span>
+
+        <span class="line">
+          <span>descanse</span>
+        </span>
+
+        <span class="line">
+          <span>e siga viagem.</span>
+        </span>
+
+      </h1>
+
+
+      <p class="lead">
+
+        O <strong>Posto e Pousada Pico do Jabre</strong>
+        une abastecimento e hospedagem em um só lugar,
+        oferecendo mais praticidade e conforto para sua viagem.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-yellow"
+          href="#localizacao"
+        >
+          Como chegar
+        </a>
+
+        <a
+          class="btn btn-ghost"
+          href="#servicos"
+        >
+          Conhecer o posto
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD PRINCIPAL -->
+
+    <div class="info-card">
+
+      <img
+        class="logo-large"
+        src="logo-pico-do-jabre.jpg"
+        alt="Posto e Pousada Pico do Jabre"
+      >
+
+      <h2>
+        Pico do Jabre
+      </h2>
+
+      <div class="card-sub">
+        Posto e Pousada
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card-info">
+
+        🏨 Hospedagem<br>
+
+        ⛽ Abastecimento<br>
+
+        ✨ Conforto para sua viagem
+
+      </div>
+
+      <div class="tags">
+
+        <span class="tag">
+          Posto
+        </span>
+
+        <span class="tag">
+          Pousada
+        </span>
+
+        <span class="tag">
+          Matureia/PB
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="wrap">
+
+    <div class="road"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+  <div class="wrap">
+
+    <div class="stat">
+
+      <div class="stat-num">
+        01
+      </div>
+
+      <div class="stat-label">
+        Localização
+      </div>
+
+    </div>
+
+
+    <div class="stat">
+
+      <div class="stat-num">
+        02
+      </div>
+
+      <div class="stat-label">
+        Serviços
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+
+<section id="servicos">
+
+  <div class="wrap">
+
+    <div class="sec-head">
+
+      <div class="sec-kicker">
+        O que você encontra aqui
+      </div>
+
+      <h2>
+        Abastecimento e hospedagem em um só lugar.
+      </h2>
+
+      <p>
+        O Posto e Pousada Pico do Jabre foi pensado
+        para oferecer praticidade e conforto para quem
+        passa por Matureia.
+      </p>
+
+    </div>
+
+
+    <div class="bento">
+
+
+      <!-- ABASTECIMENTO -->
+
+      <div class="panel panel-abastecimento">
+
+        <div class="panel-icon">
+          ⛽
+        </div>
+
+        <h3>
+          Abastecimento
+        </h3>
+
+        <p>
+          Uma parada prática para abastecer
+          durante sua viagem por Matureia/PB.
+        </p>
+
+        <div class="service-number">
+          01
+        </div>
+
+      </div>
+
+
+      <!-- HOSPEDAGEM -->
+
+      <div class="panel panel-hospedagem">
+
+        <div class="panel-icon">
+          🏨
+        </div>
+
+        <h3>
+          Hospedagem
+        </h3>
+
+        <p>
+          Um espaço para descansar e continuar
+          sua viagem com mais conforto e tranquilidade.
+        </p>
+
+        <div class="service-number">
+          02
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LOCALIZAÇÃO
+========================= -->
+
+<section
+  class="location"
+  id="localizacao"
+>
+
+  <div class="wrap">
+
+    <div class="sec-head">
+
+      <div class="sec-kicker">
+        Onde estamos
+      </div>
+
+      <h2>
+        Encontre o Pico do Jabre.
+      </h2>
+
+      <p>
+        Estamos em Matureia, na Paraíba,
+        próximos à Avenida José Jerônimo da Silva.
+      </p>
+
+    </div>
+
+
+    <div class="location-grid">
+
+
+      <!-- MAPA -->
+
+      <a
+        class="map-frame"
+        href="https://www.google.com/maps/search/?api=1&query=Posto+e+Pousada+Pico+do+Jabre%2C+Matureia%2C+PB"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <div class="map-content">
+
+          <div class="map-pin">
+            📍
+          </div>
+
+          <h3>
+            Matureia · PB
+          </h3>
+
+          <p>
+            Clique para abrir a localização no Google Maps
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- INFORMAÇÕES -->
+
+      <div class="loc-card">
+
+        <div>
+
+          <div class="loc-row">
+
+            <div class="loc-icon">
+              📍
+            </div>
+
+            <div>
+
+              <div class="loc-label">
+                Endereço
+              </div>
+
+              <div class="loc-value">
+                Próximo à Av. José Jerônimo da Silva
+                <br>
+                Maturéia - PB, 58737-000
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="loc-row">
+
+            <div class="loc-icon">
+              🏨
+            </div>
+
+            <div>
+
+              <div class="loc-label">
+                Hospedagem
+              </div>
+
+              <div class="loc-value">
+                Posto e Pousada Pico do Jabre
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="loc-row">
+
+            <div class="loc-icon">
+              ⛽
+            </div>
+
+            <div>
+
+              <div class="loc-label">
+                Abastecimento
+              </div>
+
+              <div class="loc-value">
+                Posto Pico do Jabre
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="loc-actions">
+
+          <a
+            class="btn btn-yellow"
+            href="https://www.google.com/maps/search/?api=1&query=Posto+e+Pousada+Pico+do+Jabre%2C+Matureia%2C+PB"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver no Google Maps
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta-band">
+
+  <div class="wrap">
+
+    <div class="road"></div>
+
+  </div>
+
+
+  <div class="wrap cta-inner">
+
+    <h2>
+      Conforto para sua viagem.
+    </h2>
+
+    <p>
+      Abastecimento e hospedagem
+      no Posto e Pousada Pico do Jabre.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        class="btn btn-yellow"
+        href="#localizacao"
+      >
+        Como chegar
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="wrap foot-grid">
+
+    <div class="brand">
+
+      <img
+        class="brand-logo"
+        src="logo-pico-do-jabre.jpg"
+        alt="Logo do Posto e Pousada Pico do Jabre"
+      >
+
+      <div class="brand-name">
+
+        Posto e Pousada Pico do Jabre
+
+        <small>
+          Matureia · PB
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="foot-legal">
+
+      © 2026 Posto e Pousada Pico do Jabre
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  /* Barra de progresso */
+
+  const bar =
+    document.getElementById('scrollbar');
+
+  window.addEventListener('scroll', () => {
+
+    const h =
+      document.documentElement;
+
+    const pct =
+      (h.scrollTop /
+      (h.scrollHeight - h.clientHeight))
+      * 100;
+
+    bar.style.width =
+      pct + '%';
+
+  });
+
+
+  /* Animação dos cards */
+
+  const panels =
+    document.querySelectorAll('.panel');
+
+  panels.forEach(panel => {
+
+    panel.addEventListener(
+      'mousemove',
+      event => {
+
+        const rect =
+          panel.getBoundingClientRect();
+
+        const x =
+          event.clientX - rect.left;
+
+        const y =
+          event.clientY - rect.top;
+
+        panel.style.setProperty(
+          '--mx',
+          x + 'px'
+        );
+
+        panel.style.setProperty(
+          '--my',
+          y + 'px'
+        );
+
+      }
+    );
+
+  });
+
+</script>
+
+</body>
+</html>
